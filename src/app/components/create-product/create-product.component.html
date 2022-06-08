@@ -1,0 +1,91 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-lg-6 offset-lg-3">
+      <div class="card">
+        <div class="card-body text-center">
+          <span class="title">Add Product</span>
+          <form [formGroup]="productForm" (ngSubmit)="addProduct()">
+            <div class="mb-3">
+              <input
+                type="text"
+                formControlName="product"
+                class="form-control"
+                placeholder="Product"
+              />
+              <div
+                class="text-danger"
+                *ngIf="
+                  productForm.get('product')?.hasError('required') &&
+                  productForm.get('product')?.touched
+                "
+              >
+                <span>Product is <strong>required</strong></span>
+              </div>
+            </div>
+            <div class="mb-3">
+              <input
+                type="text"
+                class="form-control"
+                formControlName="category"
+                placeholder="Category"
+              />
+              <div
+                class="text-danger"
+                *ngIf="
+                  productForm.get('category')?.hasError('required') &&
+                  productForm.get('category')?.touched
+                "
+              >
+                <span>Category is <strong>required</strong></span>
+              </div>
+            </div>
+            <div class="mb-3">
+              <input
+                type="text"
+                class="form-control"
+                formControlName="ubication"
+                placeholder="Ubication"
+              />
+              <div
+                class="text-danger"
+                *ngIf="
+                  productForm.get('ubication')?.hasError('required') &&
+                  productForm.get('ubication')?.touched
+                "
+              >
+                <span>Ubication is <strong>required</strong></span>
+              </div>
+            </div>
+            <div class="mb-3">
+              <input
+                type="number"
+                class="form-control"
+                formControlName="price"
+                placeholder="Price"
+              />
+              <div
+                class="text-danger"
+                *ngIf="
+                  productForm.get('price')?.hasError('required') &&
+                  productForm.get('price')?.touched
+                "
+              >
+                <span>Price is <strong>required</strong></span>
+              </div>
+            </div>
+            <button routerLink="/" class="btn btn-secondary float-start">
+              Go back
+            </button>
+            <button
+              type="submit"
+              [disabled]="productForm.invalid"
+              class="btn px-4 btn-success float-end"
+            >
+              Add
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+.icon {
+  cursor: pointer;
+  margin-left: 10px;
+  font-size: 20px;
+}
+.icon:last-child {
+  color: green;
+}
+.icon:first-child:hover {
+  color: red;
+}
