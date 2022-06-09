@@ -1,0 +1,37 @@
+<div class="logcontent">
+  <div class="content">
+    <div class="image-content">
+      <img
+        src="https://images.pexels.com/photos/7394344/pexels-photo-7394344.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
+      />
+    </div>
+    <form
+      ngNativeValidate
+      class="form-content"
+      [formGroup]="userForm"
+      (submit)="signIn()"
+    >
+      <div class="login">Login</div>
+
+      <label for="email">Email</label>
+      <input
+        type="email"
+        name="email"
+        id="email"
+        formControlName="email"
+        placeholder="Email"
+        required
+      />
+      <br />
+      <label for="password">Password</label>
+      <input
+        type="password"
+        id="password"
+        required
+        placeholder="Password"
+        formControlName="password"
+      />
+      <button class="form-button" type="submit">Log in</button>
+    </form>
+  </div>
+</div>

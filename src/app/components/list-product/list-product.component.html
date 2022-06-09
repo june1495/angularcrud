@@ -19,36 +19,21 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
+              <tr *ngFor="let product of productArr">
                 <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td>$10</td>
+                <td>{{ product.product }}</td>
+                <td>{{ product.category }}</td>
+                <td>{{ product.ubication }}</td>
+                <td>{{ product.price }}</td>
                 <td>
-                  <i class="icon fa-solid fa-pen-to-square"></i>
-                  <i class="icon fa-solid fa-trash"></i>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-                <td>$20</td>
-                <td>
-                  <i class="fa-solid fa-pen-to-square"></i>
-                  <i class="fa-solid fa-trash"></i>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td colspan="2">Larry the Bird</td>
-                <td>@twitter</td>
-                <td>$30</td>
-                <td>
-                  <i class="fa-solid fa-pen-to-square"></i>
-                  <i class="fa-solid fa-trash"></i>
+                  <i
+                    [routerLink]="['/editproduct/', product._id]"
+                    class="icon fa-solid fa-pen-to-square"
+                  ></i>
+                  <i
+                    (click)="deleteProduct(product._id)"
+                    class="icon fa-solid fa-trash"
+                  ></i>
                 </td>
               </tr>
             </tbody>
