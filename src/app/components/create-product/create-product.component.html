@@ -3,7 +3,7 @@
     <div class="col-lg-6 offset-lg-3">
       <div class="card">
         <div class="card-body text-center">
-          <span class="title">Add Product</span>
+          <span class="title">{{ titulo | uppercase }}</span>
           <form [formGroup]="productForm" (ngSubmit)="addProduct()">
             <div class="mb-3">
               <input

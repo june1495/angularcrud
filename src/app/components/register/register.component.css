@@ -1,0 +1,81 @@
+.regcontent {
+  border: 1px solid black;
+  width: 100%;
+  height: 100%;
+}
+.content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+.form-content {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-top: 150px;
+  margin-left: 100px;
+  width: 50%;
+}
+.form-content label {
+  font-weight: 500;
+  font-size: 18px;
+  margin-top: 20px;
+}
+.form-content input {
+  padding: 10px;
+  border-radius: 5px;
+  outline: none;
+  width: 70%;
+  border: none;
+  border-bottom: 1px solid black;
+}
+.form-content input::placeholder {
+  color: #444;
+}
+
+.form-button {
+  color: blue;
+  width: 150px;
+  margin-top: 30px;
+  margin-left: 25%;
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+  background-color: #ff0157;
+  color: #fff;
+}
+
+.image-content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(225deg, #e91e63, #03a9f4);
+  z-index: 1;
+  mix-blend-mode: screen;
+}
+.image-content {
+  position: relative;
+  width: 50%;
+  height: 100%;
+}
+.image-content img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.register {
+  font-size: 30px;
+  color: #444;
+  width: fit-content;
+  font-weight: 600;
+  border-bottom: 5px solid #ff0157;
+  margin-bottom: 10px;
+}
