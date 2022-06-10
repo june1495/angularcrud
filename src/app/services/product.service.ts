@@ -15,7 +15,7 @@ export class ProductService {
     });
   }
   getProduct() {
-    return this.http.get<any>(`${this.API_URL}/products/${this.token.id}`, {
+    return this.http.get<any>(`${this.API_URL}/products/${this.token?.id}`, {
       headers: new HttpHeaders({ user: `${this.token.id}` }),
     });
   }
