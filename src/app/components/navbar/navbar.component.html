@@ -1,0 +1,16 @@
+<div class="navcont">
+  <div class="content">
+    <div class="logo" routerLink="/">CrudTs</div>
+    <div class="navigation">
+      <ng-container *ngIf="!authservice.isLogin(); else loggedIn">
+        <div class="but" routerLink="/register">Register</div>
+        <div class="but" routerLink="/login">Login</div>
+      </ng-container>
+      <ng-template #loggedIn>
+        <div class="but" (click)="authservice.logout()" routerLink="/">
+          Logout
+        </div>
+      </ng-template>
+    </div>
+  </div>
+</div>

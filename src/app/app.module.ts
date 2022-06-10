@@ -10,6 +10,9 @@ import { ListProductComponent } from './components/list-product/list-product.com
 import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
 import { HttpClientModule } from '@angular/common/http';
+import { HomeComponent } from './components/home/home.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { AuthGuard } from './auth.guard';
 
 @NgModule({
   declarations: [
@@ -18,6 +21,8 @@ import { HttpClientModule } from '@angular/common/http';
     ListProductComponent,
     RegisterComponent,
     LoginComponent,
+    HomeComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,
@@ -25,7 +30,7 @@ import { HttpClientModule } from '@angular/common/http';
     ReactiveFormsModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

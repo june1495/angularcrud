@@ -1,0 +1,40 @@
+.navcont {
+  box-shadow: 2px 45px 24px -34px rgba(0, 0, 0, 0.05);
+}
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  margin: 20px 20px;
+  font-size: 40px;
+  width: max-content;
+  color: #323332;
+  cursor: pointer;
+}
+.navigation {
+  margin-right: 50px;
+}
+.navigation .but {
+  color: #fff;
+  font-size: 14px;
+  background: #ff0157;
+  display: inline-block;
+  font-weight: bold;
+  border: none;
+  padding: 5px 10px;
+  margin: 0 20px;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 2px;
+  transition: 0.5s;
+  font-family: Poppins;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.navigation .but:hover {
+  color: #323232;
+  letter-spacing: 3px;
+  transition: 0.5s;
+}

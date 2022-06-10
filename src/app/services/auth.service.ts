@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
   API_URL = 'http://localhost:3000/api/v1';
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router: Router) {}
   signIn(user: any) {
     return this.http.post<any>(`${this.API_URL}/login`, user);
   }
@@ -20,5 +21,9 @@ export class AuthService {
       return true;
     }
     return false;
+  }
+  logout() {
+    localStorage.removeItem('jwt');
+    this.router.navigate(['/']);
   }
 }
