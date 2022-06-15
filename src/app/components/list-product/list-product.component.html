@@ -19,8 +19,8 @@
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let product of productArr">
-                <th scope="row">1</th>
+              <tr *ngFor="let product of productArr; let i = index">
+                <th scope="row">{{ i + 1 }}</th>
                 <td>{{ product.product }}</td>
                 <td>{{ product.category }}</td>
                 <td>{{ product.ubication }}</td>
@@ -28,11 +28,18 @@
                 <td>
                   <i
                     [routerLink]="['/editproduct/', product._id]"
-                    class="icon fa-solid fa-pen-to-square"
+                    class="icon icon1 fa-solid fa-pen-to-square"
                   ></i>
                   <i
                     (click)="deleteProduct(product._id)"
-                    class="icon fa-solid fa-trash"
+                    class="icon icon2 fa-solid fa-trash"
+                  ></i>
+
+                  <i class="icon fa-solid fa-file-pdf">
+                    <app-pdftemplate
+                      id="template"
+                      [product]="product"
+                    ></app-pdftemplate
                   ></i>
                 </td>
               </tr>
