@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from 'src/app/services/product.service';
+import jsPDF from 'jspdf';
 
 @Component({
   selector: 'app-list-product',
@@ -24,5 +25,8 @@ export class ListProductComponent implements OnInit {
   deleteProduct(id: string) {
     this.productservice.deleteProduct(id).subscribe((res) => console.log(res));
     this.updateRender();
+  }
+  downloadPdf() {
+    const doc = new jsPDF();
   }
 }
