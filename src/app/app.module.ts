@@ -13,7 +13,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { AuthGuard } from './auth.guard';
-import { PdftemplateComponent } from './components/pdftemplate/pdftemplate.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +23,6 @@ import { PdftemplateComponent } from './components/pdftemplate/pdftemplate.compo
     LoginComponent,
     HomeComponent,
     NavbarComponent,
-    PdftemplateComponent,
   ],
   imports: [
     BrowserModule,

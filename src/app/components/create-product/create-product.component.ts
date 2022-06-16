@@ -41,7 +41,7 @@ export class CreateProductComponent implements OnInit {
     if (this.id !== null) {
       this.productservice
         .updateProduct(this.id, this.productForm.value)
-        .subscribe((res) => {
+        .subscribe((_res) => {
           this.router.navigate(['/product']);
         });
     } else {

@@ -36,4 +36,9 @@ export class ProductService {
       headers: { id: id, userId: `${this.token.id}` },
     });
   }
+  createPdf(pro: any) {
+    return this.http.post<any>(`${this.API_URL}/pdf`, pro, {
+      headers: { user: this.token.id },
+    });
+  }
 }
