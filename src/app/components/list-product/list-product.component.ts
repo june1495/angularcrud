@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from 'src/app/services/product.service';
 import jsPDF from 'jspdf';
+import html2canvas from 'html2canvas';
 
 @Component({
   selector: 'app-list-product',
@@ -14,7 +15,7 @@ export class ListProductComponent implements OnInit {
   ngOnInit(): void {
     this.productservice.getProduct().subscribe((res) => {
       this.productArr = res.products;
-      console.log(this.productArr);
+      // console.log(this.productArr);
     });
   }
   updateRender() {
@@ -26,7 +27,9 @@ export class ListProductComponent implements OnInit {
     this.productservice.deleteProduct(id).subscribe((res) => console.log(res));
     this.updateRender();
   }
-  downloadPdf() {
-    const doc = new jsPDF();
+  addPdf(product: any) {
+    this.productservice
+      .createPdf(product)
+      .subscribe((res) => console.log(res.filename));
   }
 }

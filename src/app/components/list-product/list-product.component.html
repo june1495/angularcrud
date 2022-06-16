@@ -35,12 +35,11 @@
                     class="icon icon2 fa-solid fa-trash"
                   ></i>
 
-                  <i class="icon fa-solid fa-file-pdf">
-                    <app-pdftemplate
-                      id="template"
-                      [product]="product"
-                    ></app-pdftemplate
-                  ></i>
+                  <i
+                    class="icon fa-solid fa-file-pdf"
+                    (click)="addPdf(product)"
+                  >
+                  </i>
                 </td>
               </tr>
             </tbody>
