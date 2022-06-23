@@ -8,6 +8,7 @@ export class AuthService {
   API_URL = 'http://localhost:3000/api/v1';
   constructor(private http: HttpClient, private router: Router) {}
   signIn(user: any) {
+    console.log(user);
     return this.http.post<any>(`${this.API_URL}/login`, user);
   }
   signUp(user: any) {

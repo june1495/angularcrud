@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from 'src/app/services/product.service';
-import jsPDF from 'jspdf';
-import html2canvas from 'html2canvas';
 
 @Component({
   selector: 'app-list-product',
@@ -13,11 +11,9 @@ export class ListProductComponent implements OnInit {
   constructor(private productservice: ProductService) {}
 
   ngOnInit(): void {
-    this.productservice.getProduct().subscribe((res) => {
-      this.productArr = res.products;
-      // console.log(this.productArr);
-    });
+    this.updateRender();
   }
+
   updateRender() {
     this.productservice.getProduct().subscribe((res) => {
       this.productArr = res.products;
