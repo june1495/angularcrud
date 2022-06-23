@@ -25,7 +25,7 @@ import { AuthGuard } from './auth.guard';
     NavbarComponent,
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
