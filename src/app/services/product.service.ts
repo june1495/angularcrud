@@ -7,7 +7,7 @@ import { AuthService } from './auth.service';
   providedIn: 'root',
 })
 export class ProductService {
-  API_URL = 'http://localhost:3000/api/v1';
+  API_URL = 'https://crudbackts.herokuapp.com/api/v1';
 
   constructor(private http: HttpClient, private auth: AuthService) {}
   addProduct(product: any) {
