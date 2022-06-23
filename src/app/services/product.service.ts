@@ -1,27 +1,31 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { AuthService } from './auth.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ProductService {
   API_URL = 'http://localhost:3000/api/v1';
-  token = JSON.parse(localStorage.getItem('jwt') as any);
-  constructor(private http: HttpClient) {}
+
+  constructor(private http: HttpClient, private auth: AuthService) {}
   addProduct(product: any) {
-    console.log(this.token);
     return this.http.post<any>(`${this.API_URL}/products`, product, {
-      headers: { user: this.token.id },
+      headers: { user: this.auth.getSession().id },
     });
   }
-  getProduct() {
-    return this.http.get<any>(`${this.API_URL}/products/${this.token?.id}`, {
-      headers: new HttpHeaders({ user: `${this.token.id}` }),
-    });
+  getProduct(): Observable<any> {
+    return this.http.get<any>(
+      `${this.API_URL}/products/${this.auth.getSession().id}`,
+      {
+        headers: { user: this.auth.getSession().id },
+      }
+    );
   }
   editProduct(product: any) {
     return this.http.put<any>(
-      `${this.API_URL}/products/${this.token.id}`,
+      `${this.API_URL}/products/${this.auth.getSession().id}`,
       product
     );
   }
@@ -33,12 +37,12 @@ export class ProductService {
   }
   deleteProduct(id: string) {
     return this.http.delete<any>(`${this.API_URL}/product/${id}`, {
-      headers: { id: id, userId: `${this.token.id}` },
+      headers: { id: id, userId: `${this.auth.getSession().id}` },
     });
   }
   createPdf(pro: any) {
     return this.http.post<any>(`${this.API_URL}/pdf`, pro, {
-      headers: { user: this.token.id },
+      headers: { user: this.auth.getSession().id },
     });
   }
 }
