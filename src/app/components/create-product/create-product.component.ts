@@ -34,10 +34,6 @@ export class CreateProductComponent implements OnInit {
     this.esEditar();
   }
   addProduct() {
-    // this.productArr.push(this.productForm.value);
-    // console.log(this.productArr);
-    // this.productForm.reset();
-    // this.router.navigate(['/']);
     if (this.id !== null) {
       this.productservice
         .updateProduct(this.id, this.productForm.value)
