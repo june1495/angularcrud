@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
   providedIn: 'root',
 })
 export class AuthService {
-  API_URL = 'http://localhost:3000/api/v1';
+  API_URL = 'https://crudbackts.herokuapp.com/api/v1';
   constructor(private http: HttpClient, private router: Router) {}
   signIn(user: any) {
     console.log(user);
